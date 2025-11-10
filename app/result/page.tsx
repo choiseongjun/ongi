@@ -3,8 +3,8 @@ import React from 'react'
 const ResultPage = () => {
   return (
     <div>
-        <div className='flex flex-col  px-[31px] w-full'>
-            <div className='mt-[27px] '>결과</div>
+        <div className='flex flex-col items-center px-[31px] w-full'>
+            <div className='mt-[27px]  text-[18px] font-bold '>결과</div>
             <div className="mt-[30px]">당신의 유형은:</div>
               <div className="mt-[0px] text-[24px] font-bold">균형형 조화자</div>
               <div className='flex justify-center mt-[30px]'>
@@ -13,10 +13,10 @@ const ResultPage = () => {
                 </div>
               </div>
               <div className='flex justify-center items-center mt-[23px] gap-[11px]'>
-                <div className='px-[9px] py-[4px] bg-[#D9F7E8] text-[#28B16E] rounded-[8px] text-[10px]'>유연한 대처</div>
-                <div className='px-[9px] py-[4px] bg-[#D9F7E8] text-[#28B16E] rounded-[8px] text-[10px]'>다양한 활동</div>
-                <div className='px-[9px] py-[4px] bg-[#D9F7E8] text-[#28B16E] rounded-[8px] text-[10px]'>유연한 대처</div>
-                <div className='px-[9px] py-[4px] bg-[#D9F7E8] text-[#28B16E] rounded-[8px] text-[10px]'>유연한 대처</div>
+                <div className='px-[9px] py-[4px] bg-[#D9F7E8] text-[#28B16E] rounded-[8px] text-[16px]'>유연한 대처</div>
+                <div className='px-[9px] py-[4px] bg-[#D9F7E8] text-[#28B16E] rounded-[8px] text-[16px]'>다양한 활동</div>
+                <div className='px-[9px] py-[4px] bg-[#D9F7E8] text-[#28B16E] rounded-[8px] text-[16px]'>유연한 대처</div>
+                <div className='px-[9px] py-[4px] bg-[#D9F7E8] text-[#28B16E] rounded-[8px] text-[16px]'>유연한 대처</div>
               </div>
               <div className='border-[#28B16E] border-[2px] rounded-[8px] w-full h-full mt-[20px] px-[20px] py-[23px]'>
                     <div className='flex items-center  '>
@@ -133,6 +133,92 @@ const ResultPage = () => {
                     </div>
                   
                   </div>
+
+
+                    <div className='w-full h-[85px] bg-[#FFC2B2]  border-[2px]  border-[#fff] mt-[12px] rounded-[8px] flex items-center px-[20px] gap-[16px]'>
+                      <div className='flex-1'>
+                      <div className='text-[16px] font-bold text-black'>주말 러닝 크루</div>
+                      <div className='text-[12px] text-gray-600 mt-[4px]'>매주 토요일 오전 * 15명 활동중</div>
+                    </div>
+                    {/* 원형 그래프 */}
+                    <div className='relative w-[60px] h-[60px]'>
+                      <svg className='w-full h-full transform -rotate-60' viewBox='0 0 100 100'>
+                        {/* 배경 원 (흰색) */}
+                        <circle
+                          cx='50'
+                          cy='50'
+                          r='40'
+                          fill='none'
+                          stroke='#fff'
+                          strokeWidth='12'
+                        />
+                        {/* 진행 원 (초록색 92%) */}
+                        <circle
+                          cx='50'
+                          cy='50'
+                          r='40'
+                          fill='none'
+                          stroke='#28B16E'
+                          strokeWidth='12'
+                          strokeDasharray={`${2 * Math.PI * 40 * 0.92} ${2 * Math.PI * 40}`}
+                          strokeLinecap='round'
+                        />
+                      </svg>
+                      {/* 퍼센트 텍스트 */}
+                      <div className='absolute inset-0 flex items-center justify-center'>
+                        <span className='text-[14px] font-bold text-[#28B16E]'>92%</span>
+                      </div>
+                    </div>
+                  
+                  </div>
+
+                   <div className='w-full h-[85px] bg-[#FFC2B2]  border-[2px]  border-[#fff] mt-[12px] rounded-[8px] flex items-center px-[20px] gap-[16px]'>
+                      <div className='flex-1'>
+                      <div className='text-[16px] font-bold text-black'>주말 러닝 크루</div>
+                      <div className='text-[12px] text-gray-600 mt-[4px]'>매주 토요일 오전 * 15명 활동중</div>
+                    </div>
+                    {/* 원형 그래프 */}
+                    <div className='relative w-[60px] h-[60px]'>
+                      <svg className='w-full h-full transform -rotate-60' viewBox='0 0 100 100'>
+                        {/* 배경 원 (흰색) */}
+                        <circle
+                          cx='50'
+                          cy='50'
+                          r='40'
+                          fill='none'
+                          stroke='#fff'
+                          strokeWidth='12'
+                        />
+                        {/* 진행 원 (초록색 92%) */}
+                        <circle
+                          cx='50'
+                          cy='50'
+                          r='40'
+                          fill='none'
+                          stroke='#28B16E'
+                          strokeWidth='12'
+                          strokeDasharray={`${2 * Math.PI * 40 * 0.92} ${2 * Math.PI * 40}`}
+                          strokeLinecap='round'
+                        />
+                      </svg>
+                      {/* 퍼센트 텍스트 */}
+                      <div className='absolute inset-0 flex items-center justify-center'>
+                        <span className='text-[14px] font-bold text-[#28B16E]'>92%</span>
+                      </div>
+                    </div>
+                  
+                  </div>
+                </div>
+
+
+               
+                {/* 하단 버튼 */}
+                <div className='mx-[38px] mb-[27px] mt-[40px]'>
+                   <div className='flex justify-center mb-2'><div className='text-[18px] font-bold'>나랑 비슷한 유형의 사람들은 어디있을까?</div></div>
+                  <button className='w-full h-[56px] bg-[#28B16E] text-white rounded-[8px] hover:bg-[#229959] transition-colors duration-300 flex flex-col items-center justify-center'>
+                    <div className='font-semibold text-[17px]'>모임 찾아보기</div>
+                    <div className='text-[12px] mt-[2px]'>최초 1회 무료</div>
+                  </button>
                 </div>
               </div>
         </div>
