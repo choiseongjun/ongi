@@ -1,6 +1,11 @@
+'use client';
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <main className="flex min-h-screen flex-col">
       {/* Header */}
@@ -15,46 +20,30 @@ export default function Home() {
         />
       </header>
 
-      {/* Content */}
-      <div className="flex-1 flex flex-col items-center justify-center px-6 md:px-12 lg:px-16 py-12 md:py-16 text-center">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-black dark:text-zinc-50 mb-4 md:mb-6">
-          온기 매칭 앱
-        </h1>
-        <p className="text-base md:text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 mb-8 md:mb-10 max-w-md">
-          시작하려면 page.tsx 파일을 수정하세요.
-        </p>
-
-        <div className="flex flex-col md:flex-row gap-3 md:gap-4 w-full md:w-auto">
-          <a
-            className="flex h-12 md:h-14 items-center justify-center gap-2 rounded-lg bg-foreground px-6 md:px-8 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:min-w-[180px]"
-            href="https://vercel.com/new"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            배포하기
-          </a>
-          <a
-            className="flex h-12 md:h-14 items-center justify-center rounded-lg border border-solid border-black/[.08] px-6 md:px-8 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:min-w-[180px]"
-            href="https://nextjs.org/docs"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            문서 보기
-          </a>
+      <div className="mx-[34px]">
+        <div className="mt-[182px]  ">
+          {/* 내 성향에 딱 맞춘 모임 추천 서비스, */}
+          <img src="/img/main/maintitle.png" alt="캐릭터" className='w-[60%] h-[30%]' />
         </div>
+        <div className="mt-[8px]">
+            <img src="/img/main/mainsubtitle.png" alt="캐릭터" className='w-[50%] h-[30%]' />
+        </div>
+        <div className="mt-[76px]">
+          <img src="/img/ongi.png" alt="캐릭터" className='w-full h-[214px] object-contain' />
+        </div>
+        <button
+          onClick={() => router.push('/questions/1')}
+          className="w-full h-[65px] bg-[#28B16E] mt-[113px] flex justify-center flex-col items-center rounded-[8px] hover:bg-[#229959] transition-colors duration-300 cursor-pointer"
+        >
+          <div className="text-[#fff] text-[18px] font-semibold">테스트 하러가기</div>
+          <div className="text-[#fff] text-[15px]">지금까지 341,256명이 참여했어요</div>
+        </button>
       </div>
 
       {/* Footer */}
-      <footer className="py-6 md:py-8 text-center text-sm md:text-base text-zinc-500 border-t border-gray-200">
+      {/* <footer className="py-6 md:py-8 text-center text-sm md:text-base text-zinc-500 border-t border-gray-200">
         <p>온기 매칭 v1.0</p>
-      </footer>
+      </footer> */}
     </main>
   );
 }

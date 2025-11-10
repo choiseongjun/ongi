@@ -124,8 +124,7 @@ export default function QuestionPage() {
       } else {
         // 마지막 질문이면 결과 페이지로
         console.log('모든 답변:', { ...answers, [currentId]: selectedOption });
-        // router.push('/result');
-        alert('모든 질문이 완료되었습니다!');
+        router.push('/result');
       }
     }
   };
@@ -174,30 +173,80 @@ export default function QuestionPage() {
         <div className='mt-[13px] text-[20px] font-medium whitespace-pre-line'>{'금요일 저녁,\n친구가 갑자기 밖으로 불러낸다!\n이때 당신의 반응은?'}</div>
       </div>
 
-      <div className='mt-[140px] mx-[32px] h-[63px] border-[#28B16E] border-[2px] rounded-[8px]'>
-          <div className='flex justify-center items-center h-full text-[17px] font-bold'>귀찮은데... 가지 않는다</div>
+      <div
+        onClick={() => setSelectedOption('option1')}
+        className={`mt-[70px] mx-[32px] h-[63px] border-[#28B16E] border-[2px] rounded-[8px] cursor-pointer transition-all duration-300 ${
+          selectedOption === 'option1'
+            ? 'bg-[#208E58] border-[#208E58]'
+            : 'bg-white'
+        }`}
+      >
+        <div className={`flex justify-center items-center h-full text-[17px] font-bold ${
+          selectedOption === 'option1' ? 'text-white' : 'text-black'
+        }`}>
+          귀찮은데... 가지 않는다
+        </div>
       </div>
 
-     <div className='mt-[15px] mx-[32px] h-[63px] border-[#28B16E] border-[2px] rounded-[8px]'>
-          <div className='flex justify-center items-center h-full text-[17px] font-bold'>내가 빠질 수 없지,당연히 나간다!</div>
+      <div
+        onClick={() => setSelectedOption('option2')}
+        className={`mt-[15px] mx-[32px] h-[63px] border-[#28B16E] border-[2px] rounded-[8px] cursor-pointer transition-all duration-300 ${
+          selectedOption === 'option2'
+            ? 'bg-[#208E58] border-[#208E58]'
+            : 'bg-white'
+        }`}
+      >
+        <div className={`flex justify-center items-center h-full text-[17px] font-bold ${
+          selectedOption === 'option2' ? 'text-white' : 'text-black'
+        }`}>
+          내가 빠질 수 없지,당연히 나간다!
+        </div>
       </div>
-      {/* Next Button - Fixed at bottom */}
+      {/* Navigation Buttons - Fixed at bottom */}
       <div className="absolute bottom-[27px] left-[32px] right-[32px]">
-        <button
-          onClick={handleNext}
-          disabled={!selectedOption}
-          className={`
-            w-full h-[56px] rounded-[8px] font-semibold text-[17px]
-            transition-all duration-300 transform
-            ${
-              selectedOption
-                ? 'bg-[#28B16E] text-white hover:bg-[#229959] active:scale-[0.98] shadow-lg'
-                : 'bg-gray-200 text-gray-400 cursor-not-allowed'
-            }
-          `}
-        >
-          {currentId === questions.length ? '완료' : '다음'}
-        </button>
+        {currentId > 1 ? (
+          // 이전/다음 버튼 (2번 문항 이상)
+          <div className="flex gap-[9px]">
+            <button
+              onClick={handleBack}
+              className="w-[68px] h-[56px] rounded-[8px] font-semibold text-[17px] bg-white border-[2px] border-[#28B16E] text-[#28B16E] hover:bg-gray-50 transition-all duration-300"
+            >
+              이전
+            </button>
+            <button
+              onClick={handleNext}
+              disabled={!selectedOption}
+              className={`
+                flex-1 h-[56px] rounded-[8px] font-semibold text-[17px]
+                transition-all duration-300 transform
+                ${
+                  selectedOption
+                    ? 'bg-[#28B16E] text-white hover:bg-[#229959] active:scale-[0.98] shadow-lg'
+                    : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                }
+              `}
+            >
+              {currentId === questions.length ? '결과보기' : '다음'}
+            </button>
+          </div>
+        ) : (
+          // 다음 버튼만 (1번 문항)
+          <button
+            onClick={handleNext}
+            disabled={!selectedOption}
+            className={`
+              w-full h-[56px] rounded-[8px] font-semibold text-[17px]
+              transition-all duration-300 transform
+              ${
+                selectedOption
+                  ? 'bg-[#28B16E] text-white hover:bg-[#229959] active:scale-[0.98] shadow-lg'
+                  : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+              }
+            `}
+          >
+            {currentId === questions.length ? '결과보기' : '다음'}
+          </button>
+        )}
       </div>
     </main>
   );
