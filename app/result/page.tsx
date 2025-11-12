@@ -3,7 +3,7 @@ import React from 'react'
 const ResultPage = () => {
   return (
     <div>
-        <div className='flex flex-col items-center px-[31px] w-full'>
+        <div className='flex flex-col items-center px-[31px] w-full min-w-0'>
             <div className='mt-[27px]  text-[18px] font-bold '>결과</div>
             <div className="mt-[30px]">당신의 유형은:</div>
               <div className="mt-[0px] text-[24px] font-bold">균형형 조화자</div>
@@ -12,9 +12,13 @@ const ResultPage = () => {
                   <img src="/img/character.png" alt="캐릭터" className='w-full h-[214px] object-contain' />
                 </div>
               </div>
-              <div className='flex justify-center items-center mt-[23px] gap-[11px]'>
+              <div className='flex justify-start items-center mt-[23px] gap-[11px] overflow-x-auto overflow-y-hidden flex-nowrap whitespace-nowrap w-full [&>*]:shrink-0'>
                 <div className='px-[9px] py-[4px] bg-[#D9F7E8] text-[#28B16E] rounded-[8px] text-[16px]'>유연한 대처</div>
                 <div className='px-[9px] py-[4px] bg-[#D9F7E8] text-[#28B16E] rounded-[8px] text-[16px]'>다양한 활동</div>
+                <div className='px-[9px] py-[4px] bg-[#D9F7E8] text-[#28B16E] rounded-[8px] text-[16px]'>유연한 대처</div>
+                <div className='px-[9px] py-[4px] bg-[#D9F7E8] text-[#28B16E] rounded-[8px] text-[16px]'>유연한 대처</div>
+                <div className='px-[9px] py-[4px] bg-[#D9F7E8] text-[#28B16E] rounded-[8px] text-[16px]'>유연한 대처</div>
+                <div className='px-[9px] py-[4px] bg-[#D9F7E8] text-[#28B16E] rounded-[8px] text-[16px]'>유연한 대처</div>
                 <div className='px-[9px] py-[4px] bg-[#D9F7E8] text-[#28B16E] rounded-[8px] text-[16px]'>유연한 대처</div>
                 <div className='px-[9px] py-[4px] bg-[#D9F7E8] text-[#28B16E] rounded-[8px] text-[16px]'>유연한 대처</div>
               </div>
@@ -79,23 +83,31 @@ const ResultPage = () => {
                 {/* 4분면 그리드 */}
                 <div className='grid grid-cols-2 rounded-[8px] overflow-hidden'>
                   {/* 1사분면 (좌상) */}
-                  <div className='bg-white px-[16px] py-[16px] h-[120px] flex items-center justify-center rounded-[8px]' style={{ borderRight: '2px solid #D9D9D9', borderBottom: '2px solid #D9D9D9' }}>
-                    <span className='text-[14px]'>1사분면</span>
+                  <div className='bg-white px-[16px] py-[16px] h-[183px] flex flex-col  rounded-[8px]' style={{ borderRight: '2px solid #D9D9D9', borderBottom: '2px solid #D9D9D9' }}>
+                    <img src="/img/yoga.png" alt="요가" className='w-[30%] h-[30%]  mt-[5px]' />
+                    <div className='text-[16px] font-bold mt-[37px]'>요가/명상</div>
+                    <div className='text-[14px] mt-[5px]'>몸과 마음의 균형 찾기</div>
                   </div>
                   {/* 2사분면 (우상) */}
-                  <div className='bg-white px-[16px] py-[16px] h-[120px] flex items-center justify-center rounded-[8px]' style={{ borderRight: '2px solid #D9D9D9', borderBottom: '2px solid #D9D9D9' }}>
-                    <span className='text-[14px]'>2사분면</span>
+                 <div className='bg-white px-[16px] py-[16px] h-[183px] flex flex-col  rounded-[8px]' style={{ borderRight: '2px solid #D9D9D9', borderBottom: '2px solid #D9D9D9' }}>
+                    <img src="/img/yoga.png" alt="요가" className='w-[30%] h-[30%]  mt-[5px]' />
+                    <div className='text-[16px] font-bold mt-[37px]'>요가/명상</div>
+                    <div className='text-[14px] mt-[5px]'>몸과 마음의 균형 찾기</div>
                   </div>
                   {/* 3사분면 (좌하) */}
-                  <div className='bg-white px-[16px] py-[16px] h-[120px] flex items-center justify-center rounded-[8px]' style={{ borderRight: '2px solid #D9D9D9' }}>
-                    <span className='text-[14px]'>3사분면</span>
+                 <div className='bg-white px-[16px] py-[16px] h-[183px] flex flex-col  rounded-[8px]' style={{ borderRight: '2px solid #D9D9D9', borderBottom: '2px solid #D9D9D9' }}>
+                    <img src="/img/yoga.png" alt="요가" className='w-[30%] h-[30%]  mt-[5px]' />
+                    <div className='text-[16px] font-bold mt-[37px]'>요가/명상</div>
+                    <div className='text-[14px] mt-[5px]'>몸과 마음의 균형 찾기</div>
                   </div>
                   {/* 4사분면 (우하) */}
-                  <div className='bg-white px-[16px] py-[16px] h-[120px] flex items-center justify-center rounded-[8px]' style={{ borderRight: '2px solid #D9D9D9' }}>
-                    <span className='text-[14px]'>4사분면</span>
+                   <div className='bg-white px-[16px] py-[16px] h-[183px] flex flex-col  rounded-[8px]' style={{ borderRight: '2px solid #D9D9D9', borderBottom: '2px solid #D9D9D9' }}>
+                    <img src="/img/yoga.png" alt="요가" className='w-[30%] h-[30%]  mt-[5px]' />
+                    <div className='text-[16px] font-bold mt-[37px]'>요가/명상</div>
+                    <div className='text-[14px] mt-[5px]'>몸과 마음의 균형 찾기</div>
                   </div>
                 </div>
-                <div className='mt-[18px] '>비슷한 사람들이 많은 클럽 TOP 3</div>
+                <div className='mt-[18px] font-bold '>비슷한 사람들이 많은 클럽 TOP 3</div>
                 <div>
                   <div className='w-full h-[85px] bg-white border-[2px] border-[#28B16E] mt-[12px] rounded-[8px] flex items-center px-[20px] gap-[16px]'>
                       <div className='flex-1'>
@@ -213,7 +225,7 @@ const ResultPage = () => {
 
                
                 {/* 하단 버튼 */}
-                <div className='mx-[38px] mb-[27px] mt-[40px]'>
+                <div className=' mb-[27px] mt-[40px]'>
                    <div className='flex justify-center mb-2'><div className='text-[18px] font-bold'>나랑 비슷한 유형의 사람들은 어디있을까?</div></div>
                   <button className='w-full h-[56px] bg-[#28B16E] text-white rounded-[8px] hover:bg-[#229959] transition-colors duration-300 flex flex-col items-center justify-center'>
                     <div className='font-semibold text-[17px]'>모임 찾아보기</div>
